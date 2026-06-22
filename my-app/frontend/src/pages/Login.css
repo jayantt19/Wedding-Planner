@@ -1,0 +1,258 @@
+/* General Styles */
+.login-container {
+  max-width: 480px;
+  margin: 80px auto;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, #f0f4ff, #ffffff);
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+  color: #2c3e50;
+}
+
+/* Header */
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-header h1 {
+  font-size: 2.5rem;
+  color: #6c63ff;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.login-header p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+/* Form Wrapper */
+.login-form-wrapper {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.9rem;
+  border: 2px solid #ecf0f1;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 5px rgba(108, 99, 255, 0.3);
+  outline: none;
+}
+
+.password-group {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #7f8c8d;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.password-toggle:hover {
+  color: #6c63ff;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  position: absolute;
+  bottom: -1.5rem;
+  left: 0;
+}
+
+.submit-btn {
+  background: #6c63ff;
+  color: #fff;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  background: #574fd6;
+  transform: translateY(-2px);
+}
+
+.success-msg {
+  text-align: center;
+  color: #27ae60;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+/* Auth Links */
+.auth-links {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.auth-links p {
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin: 0.5rem 0;
+}
+
+.auth-links a {
+  color: #6c63ff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.auth-links a:hover {
+  color: #574fd6;
+}
+
+/* Social Login */
+.social-login {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.social-login p {
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin-bottom: 1rem;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  flex: 1;
+}
+
+.social-btn.google {
+  background: #db4437;
+  color: #fff;
+}
+
+.social-btn.google:hover {
+  background: #c13529;
+  transform: translateY(-2px);
+}
+
+.social-btn.facebook {
+  background: #4267b2;
+  color: #fff;
+}
+
+.social-btn.facebook:hover {
+  background: #365899;
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.login-footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.login-footer a {
+  color: #6c63ff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.login-footer a:hover {
+  color: #574fd6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .login-container {
+    max-width: 90%;
+    margin: 60px auto;
+    padding: 2rem;
+  }
+
+  .login-header h1 {
+    font-size: 2rem;
+  }
+
+  .login-header p {
+    font-size: 1rem;
+  }
+
+  .social-buttons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 1.5rem;
+    margin: 40px auto;
+  }
+
+  .login-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .login-form-wrapper {
+    padding: 1.5rem;
+  }
+
+  .form-group input,
+  .submit-btn {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .social-btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .login-footer {
+    font-size: 0.85rem;
+  }
+}

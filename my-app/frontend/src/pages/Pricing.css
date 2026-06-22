@@ -1,0 +1,404 @@
+/* General Styles */
+.pricing-container {
+  font-family: 'Poppins', sans-serif;
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #fff0f5, #ffebf2, #ffffff);
+  color: #2c3e50;
+}
+
+/* Header */
+.pricing-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.pricing-header h1 {
+  font-size: 3.5rem;
+  color: #c2185b;
+  font-weight: 600;
+  margin: 0 0 1rem;
+}
+
+.pricing-header p {
+  font-size: 1.4rem;
+  color: #7f8c8d;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Description */
+.pricing-description {
+  max-width: 900px;
+  margin: 0 auto 4rem;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #34495e;
+}
+
+/* Pricing Cards */
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  max-width: 1300px;
+  margin: 0 auto 5rem;
+}
+
+.pricing-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-card h2 {
+  font-size: 1.8rem;
+  color: #b4004e;
+  margin-bottom: 1rem;
+}
+
+.price {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 1.5rem;
+}
+
+.pricing-card ul {
+  padding: 0;
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.pricing-card li {
+  font-size: 1rem;
+  color: #555;
+  margin: 0.8rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.check {
+  color: #27ae60;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.choose-btn {
+  background: #e91e63;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  width: 100%;
+}
+
+.choose-btn:hover {
+  background: #d81b60;
+  transform: translateY(-2px);
+}
+
+/* Compare Section */
+.compare-section {
+  max-width: 1200px;
+  margin: 5rem auto;
+  text-align: center;
+}
+
+.compare-section h2 {
+  font-size: 2.5rem;
+  color: #b4004e;
+  margin-bottom: 2.5rem;
+}
+
+.compare-table {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table-row {
+  display: contents;
+}
+
+.table-head div {
+  background: #ffc1e3;
+  padding: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.table-row div {
+  padding: 1.2rem;
+  background: #fff;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.table-row div:first-child {
+  font-weight: 500;
+  text-align: left;
+}
+
+/* Trust Section */
+.trust-section {
+  text-align: center;
+  background: #fff7fc;
+  padding: 5rem 2rem;
+  margin: 5rem 0;
+  border-radius: 20px;
+}
+
+.trust-section h2 {
+  font-size: 2.5rem;
+  color: #c2185b;
+  margin-bottom: 3rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stats div {
+  text-align: center;
+}
+
+.stats h3 {
+  font-size: 2.5rem;
+  color: #b4004e;
+  margin: 0 0 0.5rem;
+}
+
+.stats p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Testimonials */
+.testimonials {
+  max-width: 1200px;
+  margin: 5rem auto;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2.5rem;
+  color: #b4004e;
+  margin-bottom: 3rem;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-card p {
+  font-size: 1rem;
+  color: #34495e;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.testimonial-card h4 {
+  font-size: 1.2rem;
+  color: #e91e63;
+  margin: 0 0 0.5rem;
+}
+
+.testimonial-card span {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+/* FAQs */
+.pricing-faqs {
+  max-width: 1200px;
+  margin: 5rem auto;
+  text-align: center;
+}
+
+.pricing-faqs h2 {
+  font-size: 2.5rem;
+  color: #b4004e;
+  margin-bottom: 3rem;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.faq-item {
+  text-align: left;
+}
+
+.faq-item h3 {
+  font-size: 1.3rem;
+  color: #c2185b;
+  margin-bottom: 0.5rem;
+}
+
+.faq-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Pricing Note */
+.pricing-note {
+  text-align: center;
+  max-width: 800px;
+  margin: 5rem auto;
+}
+
+.pricing-note h2 {
+  font-size: 2rem;
+  color: #c2185b;
+  margin-bottom: 1rem;
+}
+
+.pricing-note p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  margin-bottom: 2rem;
+}
+
+.contact-link {
+  background: #c2185b;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.contact-link:hover {
+  background: #9c164a;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .pricing-container {
+    padding: 4rem 1.5rem;
+  }
+
+  .pricing-header h1 {
+    font-size: 2.8rem;
+  }
+
+  .pricing-cards {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .compare-table {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .pricing-header p,
+  .pricing-description {
+    font-size: 1rem;
+  }
+
+  .compare-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .table-row {
+    display: flex;
+  }
+
+  .table-row div {
+    min-width: 150px;
+  }
+
+  .trust-section,
+  .testimonials,
+  .pricing-faqs {
+    padding: 3rem 1rem;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-container {
+    padding: 3rem 1rem;
+  }
+
+  .pricing-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .pricing-card {
+    padding: 1.5rem;
+  }
+
+  .pricing-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .price {
+    font-size: 1.4rem;
+  }
+
+  .choose-btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .compare-section h2,
+  .trust-section h2,
+  .testimonials h2,
+  .pricing-faqs h2,
+  .pricing-note h2 {
+    font-size: 1.6rem;
+  }
+
+  .stats h3 {
+    font-size: 2rem;
+  }
+}

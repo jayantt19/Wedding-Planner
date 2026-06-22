@@ -1,0 +1,267 @@
+/* ==================== General Navbar Styles ==================== */
+.navbar {
+  background: #fff;
+  padding: 6px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: "Poppins", sans-serif;
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ==================== Navbar Container ==================== */
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ==================== Logo ==================== */
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #e91e63;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-icon {
+  font-size: 1.6rem;
+}
+
+/* ==================== Nav Links ==================== */
+.nav-links {
+  display: flex;
+  gap: 2px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links li a,
+.nav-links li a:hover,
+.nav-links li a:focus,
+.nav-links li a:active,
+.nav-links li a:visited {
+  text-decoration: none !important;
+}
+
+.nav-links a:focus,
+.nav-links a:active,
+.nav-btn:focus,
+.nav-btn:active,
+.profile-icon:focus,
+.profile-icon:active,
+.menu-toggle:focus,
+.menu-toggle:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.nav-links li a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #d81b60;
+  padding: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #f00ed9;
+}
+
+/* ==================== Menu Toggle ==================== */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: #2c3e50;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.menu-toggle:hover {
+  color: #e91e63;
+}
+
+/* ==================== Nav Actions ==================== */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-btn {
+  padding: 0.6rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.login-btn {
+  color: #e91e63;
+  border: 2px solid #e91e63;
+  padding: 5px 10px;
+}
+
+.login-btn:hover {
+  background: #e91e63;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.signup-btn {
+  background: #e91e63;
+  color: #fff;
+  padding: 5px 10px;
+  border: 2px solid #e91e63;
+}
+
+.signup-btn:hover {
+  color: #f84681;
+  border: 2px solid #e91e63;
+  background-color: white;
+  transform: translateY(-2px);
+}
+
+/* ==================== Profile Menu ==================== */
+.profile-menu {
+  position: relative;
+}
+
+.profile-icon {
+  font-size: 2rem;
+  color: #2c3e50;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.profile-icon:hover {
+  color: #e91e63;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  list-style: none;
+  padding: 1rem 0;
+  min-width: 180px;
+  z-index: 100;
+}
+
+.profile-dropdown li {
+  padding: 0;
+}
+
+.profile-dropdown li a,
+.profile-dropdown li button {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 1.5rem;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1rem;
+  color: #2c3e50;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.profile-dropdown li a:hover,
+.profile-dropdown li button:hover {
+  background: #f8f9fa;
+  color: #e91e63;
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 1024px) {
+  .nav-links {
+    gap: 1.5rem;
+  }
+
+  .nav-btn {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100vh;
+    background: #fff;
+    flex-direction: column;
+    padding: 5rem 2rem 2rem;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.2);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-links li {
+    margin: 0.8rem 0;
+  }
+
+  .nav-links li a {
+    font-size: 1.2rem;
+  }
+
+  .nav-actions {
+    display: none;
+  }
+
+  .profile-dropdown {
+    position: static;
+    box-shadow: none;
+    background: #f8f9fa;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    padding: 4rem 1.5rem 2rem;
+  }
+
+  .nav-links li a {
+    font-size: 1.1rem;
+  }
+}

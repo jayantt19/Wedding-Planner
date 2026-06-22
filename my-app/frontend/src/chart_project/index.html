@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safe Chart.js Example</title>
+  <style>
+    #chartContainer {
+      max-width: 800px; /* Limits the chart width */
+      max-height: 600px; /* Limits the chart height */
+      width: 100%;
+      height: 100%;
+    }
+    canvas {
+      max-width: 100%; /* Ensures canvas fits container */
+      max-height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="chartContainer">
+    <canvas id="myChart"></canvas>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+  <script>
+    // Get the canvas context
+    const ctx = document.getElementById('myChart').getContext('2d');
+
+    // Create the chart
+    const chart = new Chart(ctx, {
+      type: 'bar', // Bar chart type
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'], // X-axis labels
+        datasets: [{
+          label: 'Sample Data', // Legend label
+          data: [10, 20, 30, 40, 50], // Y-axis values
+          backgroundColor: 'rgba(75, 192, 192, 0.2)', // Bar fill color
+          borderColor: 'rgba(75, 192, 192, 1)', // Bar border color
+          borderWidth: 1 // Border thickness
+        }]
+      },
+      options: {
+        responsive: true, // Adjusts to container size
+        maintainAspectRatio: true, // Keeps width/height ratio
+        devicePixelRatio: 1, // Disables retina scaling to avoid size issues
+        scales: {
+          y: {
+            beginAtZero: true // Y-axis starts at 0
+          }
+        },
+        plugins: {
+          legend: {
+            position: 'top' // Legend position
+          }
+        }
+      }
+    });
+
+    // Handle window resizing
+    window.addEventListener('resize', () => {
+      const canvas = document.getElementById('myChart');
+      const maxSize = 8000; // Safe maximum size
+      canvas.width = Math.min(canvas.parentElement.clientWidth, maxSize);
+      canvas.height = Math.min(canvas.parentElement.clientHeight, maxSize);
+      chart.resize(); // Update chart size
+    });
+  </script>
+</body>
+</html>
