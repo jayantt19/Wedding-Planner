@@ -22,30 +22,69 @@ const Login = () => {
   };
 
   const validateForm = () => {
-    const newErrors = {};
-    if (!formData.email) newErrors.email = 'Email is required';
-    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Invalid email format';
-    if (!formData.password) newErrors.password = 'Password is required';
-    return newErrors;
-  };
+  const newErrors = {};
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const validationErrors = validateForm();
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
+  if (!formData.email) {
+    newErrors.email = 'Email is required';
+  }
+
+  if (!formData.password) {
+    newErrors.password = 'Password is required';
+  }
+
+  return newErrors;
+};
+
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const validationErrors = validateForm();
+
+  if (Object.keys(validationErrors).length > 0) {
+    setErrors(validationErrors);
+    return;
+  }
+
+  try {
+    const response = await fetch(
+      "http://localhost:5000/api/auth/login",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    );
+
+    const data = await response.json();
+
+   if (response.ok) {
+  setSubmitted(true);
+
+  localStorage.setItem("name", data.name);
+  localStorage.setItem("email", data.email);
+
+  setFormData({
+    email: "",
+    password: "",
+  });
+
+  console.log("Logged in:", data);
+
+  window.location.href = "/";
+}
+ else {
+      alert(data.message);
     }
-    // Simulate login
-    setSubmitted(true);
-    setFormData({ email: '', password: '' });
-    setTimeout(() => setSubmitted(false), 3000);
-    console.log('Login attempted:', formData);
-  };
-
-  const togglePasswordVisibility = () => {
-    setShowPassword((prev) => !prev);
-  };
+  } catch (error) {
+    console.error("Login Error:", error);
+    alert("Server error. Please try again.");
+  }
+};
+const togglePasswordVisibility = () => {
+  setShowPassword((prev) => !prev);
+};
 
   return (
     <div className="login-container">
@@ -60,7 +99,7 @@ const Login = () => {
             <input
               type="email"
               name="email"
-              placeholder="Email Address"
+              placeholder="Email"
               value={formData.email}
               onChange={handleChange}
               required

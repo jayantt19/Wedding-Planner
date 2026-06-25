@@ -324,13 +324,34 @@
 
 /* Chart Section */
 .chart-section {
-  max-width: 500px;
+  width: 100%;
+  max-width: 700px;
   margin: 3rem auto;
-  text-align: center;
   padding: 2rem;
   background: white;
   border-radius: 16px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.dark .chart-section {
+  background: #2a2a2a;
+}
+
+.chart-section h2 {
+  font-size: 2rem;
+  color: #c2176e;
+  margin-bottom: 1.5rem;
+}
+
+.pie-chart-wrapper {
+  position: relative;
+  height: 350px;
+  width: 100%;
+}
+
+.chart-section canvas {
+  max-height: 350px;
 }
 
 .dark .chart-section {
@@ -369,13 +390,13 @@
   position: relative;
 }
 
-.tips-section li::before {
+/* .tips-section li::before {
   content: '•';
   color: #d63384;
   position: absolute;
   left: 0;
   font-size: 1.5rem;
-}
+} */
 
 /* Accessibility */
 :focus {

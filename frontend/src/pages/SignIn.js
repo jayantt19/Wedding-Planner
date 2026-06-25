@@ -37,19 +37,55 @@ const SignIn = () => {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const validationErrors = validateForm();
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
-    }
-    setSubmitted(true);
-    setFormData({ fullName: '', email: '', password: '', confirmPassword: '' });
-    setTimeout(() => setSubmitted(false), 3000);
-    console.log('Sign-up attempted:', formData);
-  };
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
+  const validationErrors = validateForm();
+
+  if (Object.keys(validationErrors).length > 0) {
+    setErrors(validationErrors);
+    return;
+  }
+
+  try {
+    const response = await fetch(
+      "http://localhost:5000/api/auth/signup",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.fullName,
+          email: formData.email,
+          password: formData.password,
+        }),
+      }
+    );
+
+    const data = await response.json();
+
+    if (response.ok) {
+      setSubmitted(true);
+
+      setFormData({
+        fullName: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+      });
+
+      setTimeout(() => setSubmitted(false), 3000);
+
+      alert("Account created successfully!");
+    } else {
+      alert(data.message);
+    }
+  } catch (error) {
+    console.error("Signup Error:", error);
+    alert("Server error");
+  }
+};
   const togglePasswordVisibility = (field) => {
     if (field === 'password') setShowPassword((prev) => !prev);
     else setShowConfirmPassword((prev) => !prev);

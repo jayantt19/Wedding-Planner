@@ -1,12 +1,29 @@
 /* ==================== General Navbar Styles ==================== */
 .navbar {
   background: #fff;
+  opacity:initial;
   padding: 6px;
-  position: sticky;
+   position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
   font-family: "Poppins", sans-serif;
   transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.nav-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #e91e63;
+}
+
+.logout-btn {
+  color: #e91e63;
+  background-color: #fff;
+  cursor: pointer;
+  border: none;
 }
 
 .navbar.scrolled {

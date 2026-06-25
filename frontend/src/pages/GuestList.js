@@ -27,6 +27,7 @@ const GuestList = () => {
       return;
     }
 
+
     const newGuest = {
       id: Date.now(),
       name,
@@ -304,16 +305,22 @@ const GuestList = () => {
 
       {/* Chart Section */}
       <section className="chart-section">
-        <motion.h2
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.4 }}
-          viewport={{ once: true }}
-        >
-          RSVP Breakdown
-        </motion.h2>
-        <Pie data={chartData} options={{ maintainAspectRatio: false }} height={300} />
-      </section>
+  <motion.h2>
+    RSVP Breakdown
+  </motion.h2>
+
+  {guests.length > 0 ? (
+    <Pie
+      data={chartData}
+      options={{
+      responsive: true,
+      maintainAspectRatio: false,
+    }}
+    />
+  ) : (
+    <p>No guest data available yet.</p>
+  )}
+</section>
 
       {/* Tips Section */}
       <section className="tips-section">
@@ -346,7 +353,7 @@ const GuestList = () => {
         </motion.ul>
       </section>
 
-      <ToastContainer position="top-right" autoClose={3000}/>
+      {/* <ToastContainer position="top-right" autoClose={3000}/> */}
     </div>
   );
 };

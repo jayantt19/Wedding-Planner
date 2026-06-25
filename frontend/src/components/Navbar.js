@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 
+const userName = localStorage.getItem("name");
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,6 +29,7 @@ function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
 
   // Simulate user state (replace with actual auth logic)
   const isLoggedIn = false; // Set to true for testing logged-in state
@@ -125,13 +127,34 @@ function Navbar() {
             </div>
           ) : (
             <>
-              <Link to="/login" className="nav-btn login-btn">
-                Log In
-              </Link>
-              <Link to="/signin" className="nav-btn signup-btn">
-                Sign Up
-              </Link>
-            </>
+              {userName ? (
+  <div className="nav-profile">
+    <span>👤 {userName}</span>
+
+    <button
+  className="logout-btn"
+  onClick={() => {
+    localStorage.removeItem("name");
+    localStorage.removeItem("email");
+    window.location.reload();
+  }}
+  title="Logout"
+>
+  <i className="fas fa-power-off"></i>
+</button>
+  </div>
+) : (
+  <>
+    <Link to="/login" className="nav-btn login-btn">
+      Log In
+    </Link>
+
+    <Link to="/signin" className="nav-btn signup-btn">
+      Sign Up
+    </Link>
+  </>
+)}
+          </>
           )}
         </div>
       </div>

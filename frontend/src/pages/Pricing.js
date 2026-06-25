@@ -98,7 +98,7 @@ const Pricing = () => {
       <section className="pricing-note" data-aos="fade-up" data-aos-delay="1200">
         <h2>Need a Custom Plan?</h2>
         <p>Let’s create a package tailored just for you. Reach out to discuss your vision!</p>
-        <a href="/contact" className="contact-link">Get a Custom Quote</a>
+        <a href="/contact" className="contact-link">Contact Us</a>
       </section>
     </div>
   );
